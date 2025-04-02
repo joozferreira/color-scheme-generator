@@ -1,0 +1,111 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: monospace, Arial, Helvetica, sans-serif;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 5px;
+  padding: 25px;
+  border-bottom: 1px solid #ccc;
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  background-color: #e5e5e5;
+  border-radius: 6px;
+  padding: 0px 2px;
+}
+
+#seed-color {
+  flex: 1;
+  min-height: 35px;
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+#mode,
+#submit-btn {
+  padding: 10px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+#mode {
+  flex-grow: 2;
+  background-color: #fff;
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  background-image: url("https://www.svgrepo.com/show/520696/down-arrow-5.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: calc(100% - 10px);
+}
+
+#submit-btn {
+  background-color: #fff;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+}
+
+main > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.color-upper-block {
+  flex: 1;
+  display: grid;
+  place-items: center;
+}
+
+.color-upper-block > p {
+  font-weight: 700;
+}
+
+.color-lower-block {
+  display: none;
+  height: 3rem;
+}
+
+@media screen and (width > 480px) {
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  main {
+    flex-direction: row;
+  }
+
+  .color-upper-block > p {
+    display: none;
+  }
+
+  .color-lower-block {
+    display: grid;
+    place-items: center;
+  }
+}
