@@ -1,4 +1,4 @@
-import { contrastChecker } from "./contrastchecker";
+import { contrastChecker } from "./contrastChecker.js";
 
 const submitBtn = document.getElementById("submit-btn");
 
