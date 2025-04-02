@@ -1,5 +1,3 @@
-import { contrastChecker } from "./contrastChecker.js";
-
 const submitBtn = document.getElementById("submit-btn");
 
 submitBtn.addEventListener("click", () => {
@@ -58,21 +56,22 @@ function createLowerBlock(color, block) {
   block.appendChild(colorLowerBlock);
 }
 
-/*
-async function checkContrast(textColor, bgColor) {
-  const response = await fetch(
-    `https://webaim.org/resources/contrastchecker/?fcolor=${textColor}&bcolor=${bgColor}&api`
-  );
-  const data = await response.json();
-  return data.ratio;
+function contrastChecker(color) {
+  const hexCode = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F" ];
+
+  const red =
+    hexCode.indexOf(color.slice(1, 2)) * 16 +
+    hexCode.indexOf(color.slice(2, 3));
+
+  const green =
+    hexCode.indexOf(color.slice(3, 4)) * 16 +
+    hexCode.indexOf(color.slice(4, 5));
+
+  const blue =
+    hexCode.indexOf(color.slice(5, 6)) * 16 + hexCode.indexOf(color.slice(6));
+
+  // Brightness function taken from https://stackoverflow.com/a/51567564
+  const brightness = (red * 299 + green * 587 + blue * 114) / 1000;
+
+  return brightness > 155 ? "#000000" : "#FFFFFF";
 }
-
-async function textColorPicker(baseColor) {
-  const whiteContrast = await checkContrast("FFFFFF", baseColor);
-  const blackContrast = await checkContrast("000000", baseColor);
-
-  return whiteContrast > blackContrast ? "#FFFFFF" : "#000000";
-}
-
-textColorPicker("0000FF").then(console.log);
-*/
