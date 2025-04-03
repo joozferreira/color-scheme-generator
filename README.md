@@ -12,8 +12,8 @@ This project is part of the FrontEnd Career Path of Scrimba.
 # Description:
 - Selecting a color (input field of type color) and a mode (select field with the options available on the API documentation),
 the user makes a call to the API to provide 5 (this was brute-forced, could have been given this option to the user) colors back.
-- Stretch Goal: Add the possibility to copy by clicking the color or the code
-- Extra-stretch goal: add responsiveness
+- Stretch Goal: Add the possibility to copy by clicking the color or the code.
+- Extra-stretch goal: Add responsiveness and contrast function to ensure text is readable against background on smaller screens.
 
 # About Scrimba
 
