@@ -8,8 +8,7 @@ submitBtn.addEventListener("click", () => {
   )
     .then((res) => res.json())
     .then((data) => {
-      const colors = data.colors.map((item) => item.hex.value); // takes the X colors from the JSON file and stores it in an array
-      colorFiller(colors);
+      colorFiller(data.colors.map((item) => item.hex.value));
     });
 });
 
@@ -57,7 +56,24 @@ function createLowerBlock(color, block) {
 }
 
 function contrastChecker(color) {
-  const hexCode = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F" ];
+  const hexCode = [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+  ];
 
   const red =
     hexCode.indexOf(color.slice(1, 2)) * 16 +
